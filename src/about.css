@@ -1,0 +1,181 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', serif; /* Assuming 'Roboto Slab' is used throughout */
+    max-width: 100%;
+    overflow-x: hidden;
+}
+h1{
+    position: absolute;
+    width: 80%; /* Use percentage for responsiveness */
+    left: 10%; /* Center content */
+    top: 30;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 5vw; /* Responsive font size */
+    color: #085B57;
+}
+
+h2{
+    position: absolute;
+    width: 80%; /* Use percentage for responsiveness */
+    left: 10%; /* Center content */
+    top: 213px;
+    font-size: 3vw; /* Responsive font size */
+    color: #B2DFDB;
+}
+
+p{
+    position: absolute;
+    width: 80%; /* Use percentage for responsiveness */
+    left: 10%; /* Center content */
+    top: 213px;
+    font-size: 2vw; /* Responsive font size */
+    color: #B2DFDB;
+}
+#svg-container {
+    display: block;
+  width: 100%; /* Take the full width of its parent */
+  max-width: 100%; /* Ensure it doesn't overflow */
+  overflow: hidden; /* Prevent any part of the SVG from overflowing */
+  margin: 0 auto; /* Ensure it stays in the background */
+}
+
+/* Ensure the SVG fills the container */
+#svg-container svg {
+    width: 100%;
+    height: 100%;
+    left: -112;
+    display: block; /* Remove any default margins */
+}
+
+#about {
+    position: relative;
+    width: 100vw; /* Use viewport width for full width */
+    min-height: 100vh; /* Minimum height to cover the viewport height */
+}
+
+#background-image {
+    position: absolute;
+    width: 100%; /* Full width of the container */
+    height: 40%;
+    top: 85px;
+    background-image: url('photos/led-1.jpg');
+    background-size: cover; /* Cover the area without losing aspect ratio */
+    background-position: center;
+z-index: -1;
+}
+
+.vector {
+    position: absolute;
+    left: -7.5%;
+    right: -94.03%;
+    backdrop-filter: blur(2px);
+    
+}
+
+.green, .teal, .slate {
+    width: 100%; /* Stretch across the screen */
+}
+
+#rectangle1 {
+    position: absolute;
+    width: 100%; /* Full width */
+    height: 85px;
+    top: 0.5px;
+    background: #222222;
+    backdrop-filter: blur(2px);
+}
+
+#menu, #navigation {
+    position: absolute;
+    font-size: 3vw; /* Responsive font size */
+    line-height: 1.3; /* Adjust line height */
+}
+
+#menu {
+    right: 5%; /* Position from the right */
+    top: 21.5px;
+    color: #B2DFDB;
+}
+
+#navigation {
+    left: 10%; /* Position from the left */
+    top: 21.5px;
+    background-image: url('photos/menu icon.png');
+}
+
+#menu-icon {
+    position: absolute;
+    right: 3%; /* Position from the right */
+    top: 9.5px;
+    width: 5vw; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+    background-size: cover; /* Cover the area */
+}
+
+
+.content {
+    position: absolute;
+    width: 80%; /* Use percentage for responsiveness */
+    left: 10%; /* Center content */
+    top: 213px;
+    font-size: 4vw; /* Responsive font size */
+    color: #085B57;
+}
+
+.navbar {
+    background-color: #222222; /* Dark background color */
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none; /* Removes bullet points */
+    display: flex;
+    justify-content: space-around; /* Evenly space the navigation items */
+    align-items: center;
+    padding: 10px;
+}
+
+.navbar ul li a {
+    display: block;
+    color: #B2DFDB; /* Text color */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none; /* Removes underline from links */
+    font-size: clamp(20px, 2vw, 36px)
+}
+
+/* Change link color on hover */
+.navbar ul li a:hover {
+    background-color: #085B57;
+    color: #222222;
+}
+
+/* Media Queries for Adjustments on Smaller Screens */
+@media (max-width: 768px) {
+    #menu, #navigation, .content {
+        font-size: 5vw; /* Increase font size for readability on smaller screens */
+    }
+
+    #menu-icon {
+        width: 10vw; /* Adjust menu icon size */
+    }
+
+    #rectangle3 {
+        width: 40vw; /* Adjust rectangle width */
+    }
+}
+
+@media (max-width: 480px) {
+    #navigation {
+        display: none; /* Hide navigation on very small screens */
+    }
+
+    #menu, .content {
+        font-size: 6vw; /* Further increase font size for small screens */
+    }
+
+    #menu-icon {
+        width: 15vw; /* Increase menu icon size */
+    }
+}

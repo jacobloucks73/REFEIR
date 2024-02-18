@@ -1,14 +1,18 @@
 import React from 'react';
 import './App.css';
+import Content from './components/Content';
+import SVGContainer from './components/SVGContainer';
+import Navbar from './components/Navbar';
 
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
+// Correct Firebase imports
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
+/*import { useAuthState } from 'interactiveresume/react-firebase-hooks/auth';
+import { useCollectionData } from 'interactiveresume/react-firebase-hooks/firestore';*/
 
-firebase.initialize({
+const firebaseConfig = {
 
   apiKey: "AIzaSyAKtqGxBSbiTNZr4q8dajXlwFFgbgOe8eo",
   authDomain: "ir-rf-20b4a.firebaseapp.com",
@@ -18,16 +22,22 @@ firebase.initialize({
   appId: "1:338155808430:web:8cbcc11dd0df7e8ea2ef3f",
   measurementId: "G-XD4V66J55V"
 
-})
-const auth = firebase.auth();
-const firestore = firebase.firestore();
+}
+
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const firestore = getFirestore(app);
 
 function App() {
+  // Your component code
   return (
     <div className="App">
       <header className="App-header">
-// if user is signed in (user == true) then show x, otherwise show y
-// {user ? <x/> : <y/>}
+        <Navbar />
+        <SVGContainer />
+        <Content />
       </header>
     </div>
   );
